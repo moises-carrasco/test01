@@ -1,0 +1,24 @@
+name: first action
+
+on: [push]
+
+jobs:
+  job01:
+    runs-on: ubuntu-latest
+    steps:
+      - name: mostrar mensaje
+        run: echo "esto es un mensaje de prueba"
+      - name: mostrar fecha
+        run: date
+      - name: mostrar directorio actual
+        run: pwd
+      - name: mostrar contenido del directorio
+        run: ls -la
+      - name: mostrar contenido del directorio .github
+        run: ls -la .github
+      - name: mostrar contenido del directorio .github/workflows
+        run: ls -la .github/workflows
+      - name: mostrar contenido del directorio .github/workflows/hello.yml
+        run: cat .github/workflows/hello.yml
+      - name: mostrar contenido del directorio .gitignore
+        run: cat .gitignore
