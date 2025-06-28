@@ -6,6 +6,8 @@ jobs:
   job01:
     runs-on: ubuntu-latest
     steps:
+      - name: clonar repositorio
+        uses: actions/checkout@v3
       - name: mostrar mensaje
         run: echo "esto es un mensaje de prueba"
       - name: mostrar fecha
