@@ -12,6 +12,8 @@ jobs:
         uses: actions/checkout@v3
       - name: imprimir variable de entorno
         run: echo "$MY_VAR01"
+      - name: imprimir de nuevo la variable de entorno
+        run: echo "${{ env.MY_VAR01 }}"
       - name: definir una variable en un step
         run: echo "MI_VAR02=Hola a todos" >> $GITHUB_ENV
       - name: recibir variable del step anterior
