@@ -5,9 +5,17 @@ on: [push]
 jobs:
   job01:
     runs-on: ubuntu-latest
+    env:
+      MY_VAR01: "un texto cualquiera"
     steps:
       - name: clonar repositorio
         uses: actions/checkout@v3
+      - name: imprimir variable de entorno
+        run: echo "$MY_VAR01"
+      - name: definir una variable en un step
+        run: echo "MI_VAR02=Hola a todos" >> $GITHUB_ENV
+      - name: recibir variable del step anterior
+        run: echo "$MI_VAR02"
       - name: mostrar mensaje
         run: echo "esto es un mensaje de prueba"
       - name: mostrar fecha
